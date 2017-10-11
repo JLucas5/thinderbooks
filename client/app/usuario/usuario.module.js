@@ -7,20 +7,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var livro_component_1 = require("./livro.component");
-var livro_pipes_1 = require("./livro.pipes");
-var livro_service_1 = require("./livro.service");
-var LivroModule = /** @class */ (function () {
-    function LivroModule() {
+var usuario_component_1 = require("./usuario.component");
+var UsuarioModule = /** @class */ (function () {
+    function UsuarioModule() {
     }
-    LivroModule = __decorate([
+    UsuarioModule = __decorate([
         core_1.NgModule({
-            declarations: [livro_component_1.LivroComponent, livro_pipes_1.FiltroPorTitulo],
-            exports: [livro_component_1.LivroComponent, livro_pipes_1.FiltroPorTitulo],
-            providers: [livro_service_1.LivroService]
+            declarations: [usuario_component_1.UsuarioComponent],
+            exports: [usuario_component_1.UsuarioComponent]
         })
-    ], LivroModule);
-    return LivroModule;
+    ], UsuarioModule);
+    return UsuarioModule;
 }());
-exports.LivroModule = LivroModule;
-//# sourceMappingURL=livro.module.js.map
+exports.UsuarioModule = UsuarioModule;
+//# sourceMappingURL=usuario.module.js.map

@@ -8,4 +8,4 @@ import { LivroService } from './livro.service';
     exports: [ LivroComponent, FiltroPorTitulo ],
     providers: [ LivroService ]
 })
-export class FotoModule { }
+export class LivroModule { }

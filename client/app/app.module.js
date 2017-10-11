@@ -10,6 +10,7 @@ var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var app_component_1 = require("./app.component");
 var livro_module_1 = require("./livro/livro.module");
+var usuario_module_1 = require("./usuario/usuario.module");
 var http_1 = require("@angular/http");
 require("rxjs/add/operator/map");
 var painel_module_1 = require("./painel/painel.module");
@@ -26,13 +27,14 @@ var AppModule = /** @class */ (function () {
         core_1.NgModule({
             imports: [
                 platform_browser_1.BrowserModule,
-                livro_module_1.FotoModule,
+                livro_module_1.LivroModule,
                 http_1.HttpModule,
                 painel_module_1.PainelModule,
                 app_routes_1.routing,
                 forms_1.FormsModule,
                 forms_1.ReactiveFormsModule,
                 botao_module_1.BotaoModule,
+                usuario_module_1.UsuarioModule,
                 modal_module_1.ModalModule
             ],
             declarations: [app_component_1.AppComponent, cadastro_component_1.CadastroComponent, listagem_component_1.ListagemComponent],
