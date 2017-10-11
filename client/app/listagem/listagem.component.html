@@ -23,9 +23,9 @@
     <br>
 
     <div class="row">
-        <painel #painel *ngFor="let livro of fotos | filtroPorTitulo: textoProcurado.value" 
+        <painel #painel *ngFor="let livro of livros | filtroPorTitulo: textoProcurado.value" 
         titulo="{{livro.titulo | uppercase }}" class="col-md-2">
-            <foto url="{{livro.url}}" titulo="{{livro.titulo}}"></foto>
+            <livro isbn="{{livro.isbn}}" titulo="{{livro.titulo}}"></livro>
             
             <botao nome="Remover" estilo="btn-danger btn-block" (acao)="modal.show()" [confirmacao]="true"></botao>
             <modal #modal frase="Tem certeza que deseja remover este livro?" (confirma)="remove(livro, painel)"></modal>

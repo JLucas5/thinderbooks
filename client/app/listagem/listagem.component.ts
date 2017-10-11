@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { FotoService } from '../foto/foto.service';
-import { FotoComponent } from '../foto/foto.component';
+import { LivroService } from '../livro/livro.service';
+import { LivroComponent } from '../livro/livro.component';
 import { PainelComponent } from '../painel/painel.component';
 
 @Component({
@@ -10,40 +10,40 @@ import { PainelComponent } from '../painel/painel.component';
 })
 export class ListagemComponent {
 
-    fotos: FotoComponent[] = [];
-    service: FotoService;
+    livros: LivroComponent[] = [];
+    service: LivroService;
     mensagem: string = '';
 
-    constructor(service: FotoService) {
+    constructor(service: LivroService) {
         
         this.service = service;
         this.service
             .lista()
-            .subscribe(fotos => {
-                this.fotos = fotos;
+            .subscribe(livros => {
+                this.livros = livros;
             }, erro => console.log(erro));
        
     }
 
-    remove(foto: FotoComponent, painel: PainelComponent) {
+    remove(livro: LivroComponent, painel: PainelComponent) {
         
         this.service
-            .remove(foto)
+            .remove(livro)
             .subscribe(
                 () => {
 
                     painel.fadeOut(() => {
 
-                        let novasFotos = this.fotos.slice(0);
-                        let indice = novasFotos.indexOf(foto);
-                        novasFotos.splice(indice, 1);
-                        this.fotos = novasFotos;
-                        this.mensagem = 'Foto removida com sucesso';
+                        let novosLivros = this.livros.slice(0);
+                        let indice = novosLivros.indexOf(livro);
+                        novosLivros.splice(indice, 1);
+                        this.livros = novosLivros;
+                        this.mensagem = 'Livro removida com sucesso';
                     }); 
                 }, 
                 erro => {
                     console.log(erro);
-                    this.mensagem = 'Não foi possível remover a foto';
+                    this.mensagem = 'Não foi possível remover o livro';
                 }
             );
 

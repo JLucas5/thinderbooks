@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { FotoComponent } from '../foto/foto.component';
+import { LivroComponent } from '../livro/livro.component';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { FotoService } from '../foto/foto.service';
+import { LivroService } from '../livro/livro.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -11,14 +11,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class CadastroComponent { 
 
-    foto: FotoComponent = new FotoComponent();
+    livro: LivroComponent = new LivroComponent();
     meuForm: FormGroup;
-    service: FotoService;
+    service: LivroService;
     route: ActivatedRoute;
     router: Router;
     mensagem: string = '';
 
-    constructor(service: FotoService, fb: FormBuilder, route: ActivatedRoute, router: Router) {
+    constructor(service: LivroService, fb: FormBuilder, route: ActivatedRoute, router: Router) {
 
         this.service = service;        
         
@@ -34,7 +34,7 @@ export class CadastroComponent {
                 this.service
                     .buscaPorId(id)
                     .subscribe(
-                        foto => this.foto = foto, 
+                        livro => this.livro = livro, 
                         erro => console.log(erro)
                     );
             }
@@ -44,7 +44,7 @@ export class CadastroComponent {
         
         this.meuForm = fb.group({
             titulo: ['', Validators.compose([Validators.required, Validators.minLength(4)])],
-            url: ['', Validators.required],
+            ISBN: ['', Validators.required],
             descricao: ['']
         });
     }
@@ -53,13 +53,13 @@ export class CadastroComponent {
 
         event.preventDefault();
 
-        console.log(this.foto);
+        console.log(this.livro);
 
         this.service
-            .cadastra(this.foto)
+            .cadastra(this.livro)
             .subscribe(res => {
                 this.mensagem = res.mensagem;
-                this.foto = new FotoComponent();
+                this.livro = new LivroComponent();
                 if(!res.inclusao) this.router.navigate(['']);
             }, erro => console.log(erro));
     }

@@ -10,34 +10,34 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var foto_service_1 = require("../foto/foto.service");
+var livro_service_1 = require("../livro/livro.service");
 var ListagemComponent = /** @class */ (function () {
     function ListagemComponent(service) {
         var _this = this;
-        this.fotos = [];
+        this.livros = [];
         this.mensagem = '';
         this.service = service;
         this.service
             .lista()
-            .subscribe(function (fotos) {
-            _this.fotos = fotos;
+            .subscribe(function (livros) {
+            _this.livros = livros;
         }, function (erro) { return console.log(erro); });
     }
-    ListagemComponent.prototype.remove = function (foto, painel) {
+    ListagemComponent.prototype.remove = function (livro, painel) {
         var _this = this;
         this.service
-            .remove(foto)
+            .remove(livro)
             .subscribe(function () {
             painel.fadeOut(function () {
-                var novasFotos = _this.fotos.slice(0);
-                var indice = novasFotos.indexOf(foto);
-                novasFotos.splice(indice, 1);
-                _this.fotos = novasFotos;
-                _this.mensagem = 'Foto removida com sucesso';
+                var novosLivros = _this.livros.slice(0);
+                var indice = novosLivros.indexOf(livro);
+                novosLivros.splice(indice, 1);
+                _this.livros = novosLivros;
+                _this.mensagem = 'Livro removida com sucesso';
             });
         }, function (erro) {
             console.log(erro);
-            _this.mensagem = 'Não foi possível remover a foto';
+            _this.mensagem = 'Não foi possível remover o livro';
         });
     };
     ListagemComponent = __decorate([
@@ -46,7 +46,7 @@ var ListagemComponent = /** @class */ (function () {
             selector: 'listagem',
             templateUrl: './listagem.component.html'
         }),
-        __metadata("design:paramtypes", [foto_service_1.FotoService])
+        __metadata("design:paramtypes", [livro_service_1.LivroService])
     ], ListagemComponent);
     return ListagemComponent;
 }());

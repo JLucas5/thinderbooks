@@ -1,10 +1,10 @@
 import { Http, Headers, Response } from '@angular/http';
-import { FotoComponent } from './foto.component';
+import { LivroComponent } from './livro.component';
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 
 @Injectable()
-export class FotoService { 
+export class LivroService { 
 
     http: Http;
     headers: Headers;
@@ -18,25 +18,25 @@ export class FotoService {
 
     }
 
-    cadastra(foto: FotoComponent): Observable<MensagemCadastro> {
+    cadastra(livro: LivroComponent): Observable<MensagemCadastro> {
         
-        if(foto._id) {
+        if(livro._id) {
 
             return this.http
-                .put(this.url + '/' + foto._id, JSON.stringify(foto), { headers: this.headers})
-                .map(() => new MensagemCadastro('Foto alterada com sucesso', false));
+                .put(this.url + '/' + livro._id, JSON.stringify(livro), { headers: this.headers})
+                .map(() => new MensagemCadastro('Livro alterada com sucesso', false));
 
         } else {
 
             return this.http
-                .post(this.url, JSON.stringify(foto), { headers: this.headers })
-                .map(() => new MensagemCadastro('Foto incluída com sucesso', true));
+                .post(this.url, JSON.stringify(livro), { headers: this.headers })
+                .map(() => new MensagemCadastro('livro incluída com sucesso', true));
 
         }
         
     }
 
-    lista(): Observable<FotoComponent[]> {
+    lista(): Observable<LivroComponent[]> {
 
         return this.http
         .get(this.url)
@@ -44,12 +44,12 @@ export class FotoService {
 
     }
 
-    remove(foto: FotoComponent):  Observable<Response> {
+    remove(livro: LivroComponent):  Observable<Response> {
 
-        return this.http.delete(this.url + '/' + foto._id);
+        return this.http.delete(this.url + '/' + livro._id);
     }
 
-    buscaPorId(id: string): Observable<FotoComponent> {
+    buscaPorId(id: string): Observable<LivroComponent> {
 
         return this.http
             .get(this.url + '/' + id)

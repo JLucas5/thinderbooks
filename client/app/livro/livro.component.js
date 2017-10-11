@@ -10,26 +10,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var FotoComponent = /** @class */ (function () {
-    function FotoComponent() {
+var LivroComponent = /** @class */ (function () {
+    function LivroComponent() {
     }
     __decorate([
         core_1.Input(),
         __metadata("design:type", String)
-    ], FotoComponent.prototype, "titulo", void 0);
+    ], LivroComponent.prototype, "titulo", void 0);
     __decorate([
         core_1.Input(),
         __metadata("design:type", String)
-    ], FotoComponent.prototype, "url", void 0);
-    FotoComponent = __decorate([
+    ], LivroComponent.prototype, "isbn", void 0);
+    LivroComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'foto',
-            templateUrl: './foto.component.html',
-            styleUrls: ['./foto.component.css']
+            selector: 'livro',
+            templateUrl: './livro.component.html',
+            styleUrls: ['./livro.component.css']
         })
-    ], FotoComponent);
-    return FotoComponent;
+    ], LivroComponent);
+    return LivroComponent;
 }());
-exports.FotoComponent = FotoComponent;
-//# sourceMappingURL=foto.component.js.map
+exports.LivroComponent = LivroComponent;
+//# sourceMappingURL=livro.component.js.map

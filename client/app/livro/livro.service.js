@@ -11,45 +11,45 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var http_1 = require("@angular/http");
 var core_1 = require("@angular/core");
-var FotoService = /** @class */ (function () {
-    function FotoService(http) {
+var LivroService = /** @class */ (function () {
+    function LivroService(http) {
         this.url = 'v1/fotos';
         this.http = http;
         this.headers = new http_1.Headers();
         this.headers.append('Content-Type', 'application/json');
     }
-    FotoService.prototype.cadastra = function (foto) {
-        if (foto._id) {
+    LivroService.prototype.cadastra = function (livro) {
+        if (livro._id) {
             return this.http
-                .put(this.url + '/' + foto._id, JSON.stringify(foto), { headers: this.headers })
-                .map(function () { return new MensagemCadastro('Foto alterada com sucesso', false); });
+                .put(this.url + '/' + livro._id, JSON.stringify(livro), { headers: this.headers })
+                .map(function () { return new MensagemCadastro('Livro alterada com sucesso', false); });
         }
         else {
             return this.http
-                .post(this.url, JSON.stringify(foto), { headers: this.headers })
-                .map(function () { return new MensagemCadastro('Foto incluída com sucesso', true); });
+                .post(this.url, JSON.stringify(livro), { headers: this.headers })
+                .map(function () { return new MensagemCadastro('livro incluída com sucesso', true); });
         }
     };
-    FotoService.prototype.lista = function () {
+    LivroService.prototype.lista = function () {
         return this.http
             .get(this.url)
             .map(function (res) { return res.json(); });
     };
-    FotoService.prototype.remove = function (foto) {
-        return this.http.delete(this.url + '/' + foto._id);
+    LivroService.prototype.remove = function (livro) {
+        return this.http.delete(this.url + '/' + livro._id);
     };
-    FotoService.prototype.buscaPorId = function (id) {
+    LivroService.prototype.buscaPorId = function (id) {
         return this.http
             .get(this.url + '/' + id)
             .map(function (res) { return res.json(); });
     };
-    FotoService = __decorate([
+    LivroService = __decorate([
         core_1.Injectable(),
         __metadata("design:paramtypes", [http_1.Http])
-    ], FotoService);
-    return FotoService;
+    ], LivroService);
+    return LivroService;
 }());
-exports.FotoService = FotoService;
+exports.LivroService = LivroService;
 var MensagemCadastro = /** @class */ (function () {
     function MensagemCadastro(_mensagem, _inclusao) {
         this._mensagem = _mensagem;
@@ -74,4 +74,4 @@ var MensagemCadastro = /** @class */ (function () {
     return MensagemCadastro;
 }());
 exports.MensagemCadastro = MensagemCadastro;
-//# sourceMappingURL=foto.service.js.map
+//# sourceMappingURL=livro.service.js.map

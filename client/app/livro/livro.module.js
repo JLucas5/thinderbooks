@@ -7,19 +7,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var FiltroPorTitulo = /** @class */ (function () {
-    function FiltroPorTitulo() {
+var livro_component_1 = require("./livro.component");
+var livro_pipes_1 = require("./livro.pipes");
+var livro_service_1 = require("./livro.service");
+var FotoModule = /** @class */ (function () {
+    function FotoModule() {
     }
-    FiltroPorTitulo.prototype.transform = function (fotos, digitado) {
-        digitado = digitado.toLowerCase();
-        return fotos.filter(function (foto) { return foto.titulo.toLowerCase().includes(digitado); });
-    };
-    FiltroPorTitulo = __decorate([
-        core_1.Pipe({
-            name: 'filtroPorTitulo'
+    FotoModule = __decorate([
+        core_1.NgModule({
+            declarations: [livro_component_1.LivroComponent, livro_pipes_1.FiltroPorTitulo],
+            exports: [livro_component_1.LivroComponent, livro_pipes_1.FiltroPorTitulo],
+            providers: [livro_service_1.LivroService]
         })
-    ], FiltroPorTitulo);
-    return FiltroPorTitulo;
+    ], FotoModule);
+    return FotoModule;
 }());
-exports.FiltroPorTitulo = FiltroPorTitulo;
-//# sourceMappingURL=foto.pipes.js.map
+exports.FotoModule = FotoModule;
+//# sourceMappingURL=livro.module.js.map

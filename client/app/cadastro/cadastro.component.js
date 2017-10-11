@@ -10,14 +10,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var foto_component_1 = require("../foto/foto.component");
+var livro_component_1 = require("../livro/livro.component");
 var forms_1 = require("@angular/forms");
-var foto_service_1 = require("../foto/foto.service");
+var livro_service_1 = require("../livro/livro.service");
 var router_1 = require("@angular/router");
 var CadastroComponent = /** @class */ (function () {
     function CadastroComponent(service, fb, route, router) {
         var _this = this;
-        this.foto = new foto_component_1.FotoComponent();
+        this.livro = new livro_component_1.LivroComponent();
         this.mensagem = '';
         this.service = service;
         this.route = route;
@@ -27,24 +27,24 @@ var CadastroComponent = /** @class */ (function () {
             if (id) {
                 _this.service
                     .buscaPorId(id)
-                    .subscribe(function (foto) { return _this.foto = foto; }, function (erro) { return console.log(erro); });
+                    .subscribe(function (livro) { return _this.livro = livro; }, function (erro) { return console.log(erro); });
             }
         });
         this.meuForm = fb.group({
             titulo: ['', forms_1.Validators.compose([forms_1.Validators.required, forms_1.Validators.minLength(4)])],
-            url: ['', forms_1.Validators.required],
+            ISBN: ['', forms_1.Validators.required],
             descricao: ['']
         });
     }
     CadastroComponent.prototype.cadastrar = function (event) {
         var _this = this;
         event.preventDefault();
-        console.log(this.foto);
+        console.log(this.livro);
         this.service
-            .cadastra(this.foto)
+            .cadastra(this.livro)
             .subscribe(function (res) {
             _this.mensagem = res.mensagem;
-            _this.foto = new foto_component_1.FotoComponent();
+            _this.livro = new livro_component_1.LivroComponent();
             if (!res.inclusao)
                 _this.router.navigate(['']);
         }, function (erro) { return console.log(erro); });
@@ -55,7 +55,7 @@ var CadastroComponent = /** @class */ (function () {
             selector: 'cadastro',
             templateUrl: './cadastro.component.html'
         }),
-        __metadata("design:paramtypes", [foto_service_1.FotoService, forms_1.FormBuilder, router_1.ActivatedRoute, router_1.Router])
+        __metadata("design:paramtypes", [livro_service_1.LivroService, forms_1.FormBuilder, router_1.ActivatedRoute, router_1.Router])
     ], CadastroComponent);
     return CadastroComponent;
 }());
