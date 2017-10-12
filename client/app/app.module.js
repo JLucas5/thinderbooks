@@ -16,6 +16,7 @@ require("rxjs/add/operator/map");
 var painel_module_1 = require("./painel/painel.module");
 var cadastro_component_1 = require("./cadastro/cadastro.component");
 var listagem_component_1 = require("./listagem/listagem.component");
+var listagemUsuario_component_1 = require("./listagemUsuario/listagemUsuario.component");
 var app_routes_1 = require("./app.routes");
 var forms_1 = require("@angular/forms");
 var botao_module_1 = require("./botao/botao.module");
@@ -37,7 +38,7 @@ var AppModule = /** @class */ (function () {
                 usuario_module_1.UsuarioModule,
                 modal_module_1.ModalModule
             ],
-            declarations: [app_component_1.AppComponent, cadastro_component_1.CadastroComponent, listagem_component_1.ListagemComponent],
+            declarations: [app_component_1.AppComponent, cadastro_component_1.CadastroComponent, listagem_component_1.ListagemComponent, listagemUsuario_component_1.ListagemUsuarioComponent],
             bootstrap: [app_component_1.AppComponent]
         })
     ], AppModule);
