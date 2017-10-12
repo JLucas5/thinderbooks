@@ -15,6 +15,7 @@ var http_1 = require("@angular/http");
 require("rxjs/add/operator/map");
 var painel_module_1 = require("./painel/painel.module");
 var cadastro_component_1 = require("./cadastro/cadastro.component");
+var cadastroUsuario_component_1 = require("./cadastroUsuario/cadastroUsuario.component");
 var listagem_component_1 = require("./listagem/listagem.component");
 var listagemUsuario_component_1 = require("./listagemUsuario/listagemUsuario.component");
 var app_routes_1 = require("./app.routes");
@@ -38,7 +39,7 @@ var AppModule = /** @class */ (function () {
                 usuario_module_1.UsuarioModule,
                 modal_module_1.ModalModule
             ],
-            declarations: [app_component_1.AppComponent, cadastro_component_1.CadastroComponent, listagem_component_1.ListagemComponent, listagemUsuario_component_1.ListagemUsuarioComponent],
+            declarations: [app_component_1.AppComponent, cadastro_component_1.CadastroComponent, cadastroUsuario_component_1.CadastroUsuarioComponent, listagem_component_1.ListagemComponent, listagemUsuario_component_1.ListagemUsuarioComponent],
             bootstrap: [app_component_1.AppComponent]
         })
     ], AppModule);

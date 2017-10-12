@@ -7,6 +7,7 @@ import { HttpModule } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { PainelModule } from './painel/painel.module';
 import { CadastroComponent } from './cadastro/cadastro.component';
+import { CadastroUsuarioComponent } from './cadastroUsuario/cadastroUsuario.component';
 import { ListagemComponent } from './listagem/listagem.component';
 import { ListagemUsuarioComponent } from './listagemUsuario/listagemUsuario.component';
 import { UsuarioComponent } from './usuario/usuario.component';
@@ -28,7 +29,7 @@ import { ModalModule } from './modal/modal.module';
         UsuarioModule,
         ModalModule
     ],
-    declarations: [ AppComponent, CadastroComponent, ListagemComponent, ListagemUsuarioComponent ],
+    declarations: [ AppComponent, CadastroComponent,CadastroUsuarioComponent, ListagemComponent, ListagemUsuarioComponent ],
     bootstrap: [ AppComponent ]
 })
 export class AppModule { }
