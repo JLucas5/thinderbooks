@@ -8,13 +8,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var usuario_component_1 = require("./usuario.component");
+var usuario_service_1 = require("./usuario.service");
 var UsuarioModule = /** @class */ (function () {
     function UsuarioModule() {
     }
     UsuarioModule = __decorate([
         core_1.NgModule({
             declarations: [usuario_component_1.UsuarioComponent],
-            exports: [usuario_component_1.UsuarioComponent]
+            exports: [usuario_component_1.UsuarioComponent],
+            providers: [usuario_service_1.UsuarioService]
         })
     ], UsuarioModule);
     return UsuarioModule;

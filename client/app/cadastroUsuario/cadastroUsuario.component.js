@@ -13,10 +13,12 @@ var core_1 = require("@angular/core");
 var usuario_component_1 = require("../usuario/usuario.component");
 var forms_1 = require("@angular/forms");
 var router_1 = require("@angular/router");
+var usuario_service_1 = require("../usuario/usuario.service");
 var CadastroUsuarioComponent = /** @class */ (function () {
-    function CadastroUsuarioComponent(fb, route, router) {
+    function CadastroUsuarioComponent(service, fb, route, router) {
         this.usuario = new usuario_component_1.UsuarioComponent();
         this.mensagem = '';
+        this.service = service;
         this.meuForm = fb.group({
             nome: ['', forms_1.Validators.required],
             sobrenome: ['', forms_1.Validators.required],
@@ -25,8 +27,17 @@ var CadastroUsuarioComponent = /** @class */ (function () {
         });
     }
     CadastroUsuarioComponent.prototype.cadastrar = function (event) {
+        var _this = this;
         event.preventDefault();
         console.log(this.usuario);
+        this.service
+            .cadastra(this.usuario)
+            .subscribe(function (res) {
+            _this.mensagem = res.mensagem;
+            _this.usuario = new usuario_component_1.UsuarioComponent();
+            if (!res.inclusao)
+                _this.router.navigate(['']);
+        }, function (erro) { return console.log(erro); });
     };
     CadastroUsuarioComponent = __decorate([
         core_1.Component({
@@ -34,7 +45,7 @@ var CadastroUsuarioComponent = /** @class */ (function () {
             selector: 'cadastroUsuario',
             templateUrl: './cadastroUsuario.component.html'
         }),
-        __metadata("design:paramtypes", [forms_1.FormBuilder, router_1.ActivatedRoute, router_1.Router])
+        __metadata("design:paramtypes", [usuario_service_1.UsuarioService, forms_1.FormBuilder, router_1.ActivatedRoute, router_1.Router])
     ], CadastroUsuarioComponent);
     return CadastroUsuarioComponent;
 }());
