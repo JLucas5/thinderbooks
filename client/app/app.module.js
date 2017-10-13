@@ -18,6 +18,8 @@ var cadastro_component_1 = require("./cadastro/cadastro.component");
 var cadastroUsuario_component_1 = require("./cadastroUsuario/cadastroUsuario.component");
 var listagem_component_1 = require("./listagem/listagem.component");
 var listagemUsuario_component_1 = require("./listagemUsuario/listagemUsuario.component");
+var menu_component_1 = require("./menu/menu.component");
+var contaUsuario_component_1 = require("./contaUsuario/contaUsuario.component");
 var app_routes_1 = require("./app.routes");
 var forms_1 = require("@angular/forms");
 var botao_module_1 = require("./botao/botao.module");
@@ -39,7 +41,7 @@ var AppModule = /** @class */ (function () {
                 usuario_module_1.UsuarioModule,
                 modal_module_1.ModalModule
             ],
-            declarations: [app_component_1.AppComponent, cadastro_component_1.CadastroComponent, cadastroUsuario_component_1.CadastroUsuarioComponent, listagem_component_1.ListagemComponent, listagemUsuario_component_1.ListagemUsuarioComponent],
+            declarations: [app_component_1.AppComponent, cadastro_component_1.CadastroComponent, cadastroUsuario_component_1.CadastroUsuarioComponent, listagem_component_1.ListagemComponent, listagemUsuario_component_1.ListagemUsuarioComponent, menu_component_1.MenuComponent, contaUsuario_component_1.ContaUsuarioComponent],
             bootstrap: [app_component_1.AppComponent]
         })
     ], AppModule);

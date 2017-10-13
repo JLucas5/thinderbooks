@@ -11,6 +11,8 @@ import { CadastroUsuarioComponent } from './cadastroUsuario/cadastroUsuario.comp
 import { ListagemComponent } from './listagem/listagem.component';
 import { ListagemUsuarioComponent } from './listagemUsuario/listagemUsuario.component';
 import { UsuarioComponent } from './usuario/usuario.component';
+import { MenuComponent } from './menu/menu.component';
+import { ContaUsuarioComponent } from './contaUsuario/contaUsuario.component';
 import { routing }  from './app.routes';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BotaoModule } from './botao/botao.module';
@@ -29,7 +31,7 @@ import { ModalModule } from './modal/modal.module';
         UsuarioModule,
         ModalModule
     ],
-    declarations: [ AppComponent, CadastroComponent,CadastroUsuarioComponent, ListagemComponent, ListagemUsuarioComponent ],
+    declarations: [ AppComponent, CadastroComponent,CadastroUsuarioComponent, ListagemComponent, ListagemUsuarioComponent, MenuComponent, ContaUsuarioComponent ],
     bootstrap: [ AppComponent ]
 })
 export class AppModule { }
