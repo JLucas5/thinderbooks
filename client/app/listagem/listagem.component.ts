@@ -19,9 +19,15 @@ export class ListagemComponent {
         this.service = service;
         this.service
             .lista()
-            .subscribe(livros => {
-                this.livros = livros;
-            }, erro => console.log(erro));
+            .subscribe(lista => {
+                var listagem[];
+                lista.forEach(atual => {
+                    if(atual.url != "" && atual.nome == undefined){
+                        listagem.push(atual);
+                    }
+                });
+                this.livros = listagem;
+            });
        
     }
 
