@@ -30,6 +30,11 @@ var UsuarioService = /** @class */ (function () {
                 .map(function () { return new MensagemCadastro('Usuário incluído com sucesso', true); });
         }
     };
+    UsuarioService.prototype.lista = function () {
+        return this.http
+            .get(this.url)
+            .map(function (res) { return res.json(); });
+    };
     UsuarioService = __decorate([
         core_1.Injectable(),
         __metadata("design:paramtypes", [http_1.Http])

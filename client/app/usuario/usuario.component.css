@@ -1,6 +1,11 @@
 .componente{
     width: 10em;
     height: 2em;
+    margin: 1em;
     border-radius: 10px;
     background-color: #A2A2A2;
+}
+
+.usuario-identificacao{
+    margin-left: 2EM;
 }
