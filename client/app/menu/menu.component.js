@@ -19,9 +19,16 @@ var MenuComponent = /** @class */ (function () {
         this.service = service;
         this.service
             .lista()
-            .subscribe(function (livros) {
-            _this.livros = livros;
-        }, function (erro) { return console.log(erro); });
+            .subscribe(function (lista) {
+            var listagem = [];
+            lista.forEach(function (atual) {
+                if (atual.url != "" && atual.nome == undefined) {
+                    listagem.push(atual);
+                }
+            });
+            _this.livros = listagem;
+            console.log(_this.livros);
+        });
     }
     MenuComponent = __decorate([
         core_1.Component({
