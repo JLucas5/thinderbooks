@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { UsuarioComponent } from '../usuario/usuario.component';
+import { UsuarioService } from '../usuario/usuario.service';
 
 @Component({
     moduleId: module.id,
@@ -9,13 +10,22 @@ import { UsuarioComponent } from '../usuario/usuario.component';
 
 export class ListagemUsuarioComponent {
 
-    usuario: UsuarioComponent = new UsuarioComponent();
+    usuarios: UsuarioComponent[] = [];
+    service: UsuarioService;
+    mensagem: string = '';
 
-    constructor() {
-        this.usuario.nome = "Natalia";
-        this.usuario.sobrenome = "Marufuji aoki";
-        this.usuario.email = "testeteste";
-        this.usuario.dataNascimento = new Date();
-        this.usuario._id = "1";
+    constructor(service: UsuarioService) {
+        this.service = service;
+        this.service
+            .lista()
+            .subscribe(lista => {
+                var listagem[];
+                lista.forEach(atual => {
+                    if(atual.url == undefined && atual.nome != ""){
+                        listagem.push(atual);
+                    }
+                });
+                this.usuarios= listagem;
+            });
     }
  }

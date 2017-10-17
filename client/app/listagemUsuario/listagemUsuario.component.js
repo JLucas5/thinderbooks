@@ -10,15 +10,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var usuario_component_1 = require("../usuario/usuario.component");
+var usuario_service_1 = require("../usuario/usuario.service");
 var ListagemUsuarioComponent = /** @class */ (function () {
-    function ListagemUsuarioComponent() {
-        this.usuario = new usuario_component_1.UsuarioComponent();
-        this.usuario.nome = "Natalia";
-        this.usuario.sobrenome = "Marufuji aoki";
-        this.usuario.email = "testeteste";
-        this.usuario.dataNascimento = new Date();
-        this.usuario._id = "1";
+    function ListagemUsuarioComponent(service) {
+        var _this = this;
+        this.usuarios = [];
+        this.mensagem = '';
+        this.service = service;
+        this.service
+            .lista()
+            .subscribe(function (lista) {
+            var listagem = [];
+            lista.forEach(function (atual) {
+                if (atual.url == undefined && atual.nome != "") {
+                    listagem.push(atual);
+                }
+            });
+            _this.usuarios = listagem;
+        });
     }
     ListagemUsuarioComponent = __decorate([
         core_1.Component({
@@ -26,7 +35,7 @@ var ListagemUsuarioComponent = /** @class */ (function () {
             selector: 'listagemUsuario',
             templateUrl: './listagemUsuario.component.html'
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [usuario_service_1.UsuarioService])
     ], ListagemUsuarioComponent);
     return ListagemUsuarioComponent;
 }());
