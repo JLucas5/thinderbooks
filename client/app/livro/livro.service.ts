@@ -36,12 +36,11 @@ export class LivroService {
         
     }
 
-    lista(): Observable<LivroComponent[]> {
+    lista() {
 
         return this.http
         .get(this.url)
         .map(res => res.json());
-
     }
 
     remove(livro: LivroComponent):  Observable<Response> {
