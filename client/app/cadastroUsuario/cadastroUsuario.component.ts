@@ -3,6 +3,7 @@ import { UsuarioComponent } from '../usuario/usuario.component';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UsuarioService } from '../usuario/usuario.service';
+import { CustomValidation } from '../helper/CustomValidator';
 
 @Component({
     moduleId: module.id,
@@ -25,11 +26,18 @@ export class CadastroUsuarioComponent {
             this.meuForm = fb.group({
             nome: ['', Validators.required],
             sobrenome: ['', Validators.required],
-            email: ['', Validators.required],
-            dataNascimento: ['', Validators.required]
-        });
+            email: ['',Validators.required],
+            dataNascimento: ['', Validators.required],
+            senha: ['', Validators.compose(
+                    [Validators.required, Validators.minLength(4)])],
+            confirmaSenha: ['', Validators.required]
+        },  {
+            validator: CustomValidation.MatchPassword
+          },
+        );
     }
-
+    
+    
     cadastrar(event) {
 
         event.preventDefault();

@@ -14,6 +14,7 @@ var usuario_component_1 = require("../usuario/usuario.component");
 var forms_1 = require("@angular/forms");
 var router_1 = require("@angular/router");
 var usuario_service_1 = require("../usuario/usuario.service");
+var CustomValidator_1 = require("../helper/CustomValidator");
 var CadastroUsuarioComponent = /** @class */ (function () {
     function CadastroUsuarioComponent(service, fb, route, router) {
         this.usuario = new usuario_component_1.UsuarioComponent();
@@ -23,7 +24,11 @@ var CadastroUsuarioComponent = /** @class */ (function () {
             nome: ['', forms_1.Validators.required],
             sobrenome: ['', forms_1.Validators.required],
             email: ['', forms_1.Validators.required],
-            dataNascimento: ['', forms_1.Validators.required]
+            dataNascimento: ['', forms_1.Validators.required],
+            senha: ['', forms_1.Validators.compose([forms_1.Validators.required, forms_1.Validators.minLength(4)])],
+            confirmaSenha: ['', forms_1.Validators.required]
+        }, {
+            validator: CustomValidator_1.CustomValidation.MatchPassword
         });
     }
     CadastroUsuarioComponent.prototype.cadastrar = function (event) {
