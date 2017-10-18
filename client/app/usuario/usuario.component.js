@@ -29,6 +29,14 @@ var UsuarioComponent = /** @class */ (function () {
         core_1.Input(),
         __metadata("design:type", String)
     ], UsuarioComponent.prototype, "email", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", String)
+    ], UsuarioComponent.prototype, "senha", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", String)
+    ], UsuarioComponent.prototype, "confirmaSenha", void 0);
     UsuarioComponent = __decorate([
         core_1.Component({
             moduleId: module.id,

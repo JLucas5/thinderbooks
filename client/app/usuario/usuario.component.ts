@@ -12,5 +12,7 @@ export class UsuarioComponent {
     @Input() sobrenome: string;
     @Input() dataNascimento: Date;
     @Input() email: string;
+    @Input() senha: string;
+    @Input() confirmaSenha: string;
     _id: string;
 }
