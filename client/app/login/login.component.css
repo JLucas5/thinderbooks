@@ -1,0 +1,13 @@
+.welcome{
+    background-image: url(http://noticias.universia.com.br/net/images/educacion/l/li/liv/livros-jose-alencar.jpg);
+}
+
+.titulo{
+    color: #E8E8E8;
+    text-shadow: 3px 3px 3px #000;
+}
+
+.conteudo{
+    margin-top: 20%;
+}
+
