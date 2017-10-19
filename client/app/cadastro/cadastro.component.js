@@ -32,7 +32,7 @@ var CadastroComponent = /** @class */ (function () {
         });
         this.meuForm = fb.group({
             titulo: ['', forms_1.Validators.compose([forms_1.Validators.required, forms_1.Validators.minLength(4)])],
-            ISBN: ['', forms_1.Validators.required],
+            isbn: ['', forms_1.Validators.required],
             descricao: ['']
         });
     }

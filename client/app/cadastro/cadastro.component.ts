@@ -44,7 +44,7 @@ export class CadastroComponent {
         
         this.meuForm = fb.group({
             titulo: ['', Validators.compose([Validators.required, Validators.minLength(4)])],
-            ISBN: ['', Validators.required],
+            isbn: ['', Validators.required],
             descricao: ['']
         });
     }
