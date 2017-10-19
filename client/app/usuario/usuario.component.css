@@ -1,5 +1,5 @@
 .componente{
-    width: 10em;
+    width: 20em;
     height: 2em;
     margin: 1em;
     border-radius: 10px;
@@ -7,5 +7,5 @@
 }
 
 .usuario-identificacao{
-    margin-left: 2EM;
+    margin-left: 2em;
 }
