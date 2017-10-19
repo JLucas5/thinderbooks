@@ -8,6 +8,7 @@ var login_component_1 = require("./login/login.component");
 var contaUsuario_component_1 = require("./contaUsuario/contaUsuario.component");
 var appRoutes = [
     { path: '', component: login_component_1.LoginComponent },
+    { path: 'menu', component: menu_component_1.MenuComponent },
     { path: 'cadastro', component: cadastro_component_1.CadastroComponent },
     { path: 'cadastro/:id', component: cadastro_component_1.CadastroComponent },
     { path: 'contaUsuario', component: contaUsuario_component_1.ContaUsuarioComponent },

@@ -10,6 +10,7 @@ import { ContaUsuarioComponent } from './contaUsuario/contaUsuario.component';
 const appRoutes: Routes = [
 
     { path: '', component: LoginComponent },
+    { path: 'menu', component: MenuComponent },
     { path: 'cadastro', component: CadastroComponent },
     { path: 'cadastro/:id', component: CadastroComponent },
     { path: 'contaUsuario', component: ContaUsuarioComponent },
