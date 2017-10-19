@@ -11,19 +11,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var usuario_component_1 = require("../usuario/usuario.component");
+var usuario_service_1 = require("../usuario/usuario.service");
 var livro_service_1 = require("../livro/livro.service");
 var ContaUsuarioComponent = /** @class */ (function () {
-    function ContaUsuarioComponent(service) {
-        var _this = this;
+    function ContaUsuarioComponent(service, userService) {
         this.usuario = new usuario_component_1.UsuarioComponent();
         this.livros = [];
         this.mensagem = '';
-        this.serviceLi = service;
-        this.serviceLi
-            .lista()
-            .subscribe(function (livros) {
-            _this.livros = livros;
-        }, function (erro) { return console.log(erro); });
     }
     ContaUsuarioComponent = __decorate([
         core_1.Component({
@@ -32,7 +26,7 @@ var ContaUsuarioComponent = /** @class */ (function () {
             templateUrl: './contaUsuario.component.html',
             styleUrls: ['./contaUsuario.component.css']
         }),
-        __metadata("design:paramtypes", [livro_service_1.LivroService])
+        __metadata("design:paramtypes", [livro_service_1.LivroService, usuario_service_1.UsuarioService])
     ], ContaUsuarioComponent);
     return ContaUsuarioComponent;
 }());

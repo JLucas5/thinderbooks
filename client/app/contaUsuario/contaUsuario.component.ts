@@ -20,16 +20,11 @@ export class ContaUsuarioComponent {
     service: UsuarioService;
     livros: LivroComponent[] = [];
     serviceLi: LivroService;
+    ServiceUs: UsuarioService;
     mensagem: string = '';
 
-    constructor(service: LivroService) {
-        
-        this.serviceLi = service;
-        this.serviceLi
-            .lista()
-            .subscribe(livros => {
-                this.livros = livros;
-            }, erro => console.log(erro));
+    constructor(service: LivroService, userService: UsuarioService) {
+
        
     }
 
