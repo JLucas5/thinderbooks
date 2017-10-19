@@ -13,6 +13,7 @@ const appRoutes: Routes = [
     { path: 'cadastro/:id', component: CadastroComponent },
     { path: 'contaUsuario', component: ContaUsuarioComponent },
     { path: 'cadastroUsuario', component: CadastroUsuarioComponent },
+    { path: 'cadastroUsuario/:id', component: CadastroUsuarioComponent },
     { path: '**', component: MenuComponent }
 ];
 

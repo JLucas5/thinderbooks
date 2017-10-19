@@ -11,6 +11,7 @@ var appRoutes = [
     { path: 'cadastro/:id', component: cadastro_component_1.CadastroComponent },
     { path: 'contaUsuario', component: contaUsuario_component_1.ContaUsuarioComponent },
     { path: 'cadastroUsuario', component: cadastroUsuario_component_1.CadastroUsuarioComponent },
+    { path: 'cadastroUsuario/:id', component: cadastroUsuario_component_1.CadastroUsuarioComponent },
     { path: '**', component: menu_component_1.MenuComponent }
 ];
 exports.routing = router_1.RouterModule.forRoot(appRoutes);
