@@ -12,6 +12,7 @@ import { ListagemComponent } from './listagem/listagem.component';
 import { ListagemUsuarioComponent } from './listagemUsuario/listagemUsuario.component';
 import { UsuarioComponent } from './usuario/usuario.component';
 import { MenuComponent } from './menu/menu.component';
+import { LoginComponent } from './login/login.component';
 import { ContaUsuarioComponent } from './contaUsuario/contaUsuario.component';
 import { routing }  from './app.routes';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -31,7 +32,7 @@ import { ModalModule } from './modal/modal.module';
         UsuarioModule,
         ModalModule
     ],
-    declarations: [ AppComponent, CadastroComponent,CadastroUsuarioComponent, ListagemComponent, ListagemUsuarioComponent, MenuComponent, ContaUsuarioComponent ],
+    declarations: [ AppComponent, CadastroComponent,CadastroUsuarioComponent, ListagemComponent, ListagemUsuarioComponent, MenuComponent, ContaUsuarioComponent, LoginComponent ],
     bootstrap: [ AppComponent ]
 })
 export class AppModule { }

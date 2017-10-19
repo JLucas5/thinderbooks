@@ -4,11 +4,12 @@ import { CadastroUsuarioComponent } from './cadastroUsuario/cadastroUsuario.comp
 import { ListagemComponent } from './listagem/listagem.component';
 import { ListagemUsuarioComponent } from './listagemUsuario/listagemUsuario.component';
 import { MenuComponent } from './menu/menu.component';
+import { LoginComponent } from './login/login.component';
 import { ContaUsuarioComponent } from './contaUsuario/contaUsuario.component';
 
 const appRoutes: Routes = [
 
-    { path: '', component: MenuComponent },
+    { path: '', component: LoginComponent },
     { path: 'cadastro', component: CadastroComponent },
     { path: 'cadastro/:id', component: CadastroComponent },
     { path: 'contaUsuario', component: ContaUsuarioComponent },
