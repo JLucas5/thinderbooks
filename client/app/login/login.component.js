@@ -13,16 +13,48 @@ var core_1 = require("@angular/core");
 var usuario_component_1 = require("../usuario/usuario.component");
 var forms_1 = require("@angular/forms");
 var router_1 = require("@angular/router");
+;
 var usuario_service_1 = require("../usuario/usuario.service");
 var LoginComponent = /** @class */ (function () {
     function LoginComponent(service, fb, route, router) {
-        this.usuario = new usuario_component_1.UsuarioComponent();
+        var _this = this;
+        this.user = new usuario_component_1.UsuarioComponent();
+        this.listaUsuarios = [];
         this.mensagem = '';
+        this.route = route;
+        this.router = router;
+        this.service = service;
+        this.service
+            .lista()
+            .subscribe(function (lista) {
+            var listagem = [];
+            lista.forEach(function (atual) {
+                if (atual.url == undefined && atual.nome != "") {
+                    listagem.push(atual);
+                }
+            });
+            _this.listaUsuarios = listagem;
+        });
         this.meuForm = fb.group({
             usuario: [''],
             senha: ['']
         });
     }
+    LoginComponent.prototype.verificaAutenticacao = function (event) {
+        event.preventDefault();
+        var email = this.user.email;
+        var senha = this.user.senha;
+        var lista = this.listaUsuarios;
+        var autenticado;
+        lista.forEach(function (atual) {
+            if (atual.email == email && atual.senha == senha) {
+                autenticado = true;
+                console.log("true");
+            }
+        });
+        this.router.navigateByUrl("/**");
+        console.log(autenticado);
+    };
     LoginComponent = __decorate([
         core_1.Component({
             moduleId: module.id,

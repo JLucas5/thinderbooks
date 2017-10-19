@@ -1,16 +1,16 @@
-<div class="container conteudo">
+<div class="container">
     <div class="jumbotron welcome">
-        <h2 class="titulo">Bem-vindo(a) ao ThinderBooks!</h2>
+        <h2>Bem-vindo(a) ao ThinderBooks!</h2>
     </div>
     
-    <form [formGroup]="meuForm" class="row" (submit)="cadastrar($event)" >
-        <div class="col-md-6">
+    <form [formGroup]="meuForm" class="row" (submit)="verificaAutenticacao($event)" >
+        <div class="col-md-6 conteudo">
             <div class="form-group">
                 <label>Usuário</label>
                 <input 
                     formControlName="usuario" 
                     name="usuario" 
-                    [(ngModel)]="usuario.email" 
+                    [(ngModel)]="user.email" 
                     class="form-control"  
                     autocomplete="off"
                     placeholder="E-mail cadastrado">                      
@@ -20,13 +20,13 @@
                 <input
                     formControlName="senha"  
                     name="senha" 
-                    [(ngModel)]="usuario.senha" 
+                    [(ngModel)]="user.senha" 
                     class="form-control"  
                     autocomplete="off"
                     placeholder="Senha">                      
             </div>
 
-            <botao nome="Entrar" estilo="btn-primary" tipo="submit" [desabilitado]="meuForm.invalid">
+            <botao nome="Entrar" estilo="btn-primary" tipo="submit" >
             </botao>
         
             <hr>
