@@ -5,7 +5,8 @@ import { UsuarioService } from '../usuario/usuario.service';
 @Component({
     moduleId: module.id,
     selector: 'listagemUsuario',
-    templateUrl: './listagemUsuario.component.html'
+    templateUrl: './listagemUsuario.component.html',
+    styleUrls: ['./listagemUsuario.component.css']
 })
 
 export class ListagemUsuarioComponent {

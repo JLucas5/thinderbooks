@@ -33,7 +33,8 @@ var ListagemUsuarioComponent = /** @class */ (function () {
         core_1.Component({
             moduleId: module.id,
             selector: 'listagemUsuario',
-            templateUrl: './listagemUsuario.component.html'
+            templateUrl: './listagemUsuario.component.html',
+            styleUrls: ['./listagemUsuario.component.css']
         }),
         __metadata("design:paramtypes", [usuario_service_1.UsuarioService])
     ], ListagemUsuarioComponent);
