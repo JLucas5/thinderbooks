@@ -35,6 +35,12 @@ var UsuarioService = /** @class */ (function () {
             .get(this.url)
             .map(function (res) { return res.json(); });
     };
+    UsuarioService.prototype.buscaPorId = function (id) {
+        console.log(id);
+        return this.http
+            .get(this.url + '/' + id)
+            .map(function (res) { return res.json(); });
+    };
     UsuarioService = __decorate([
         core_1.Injectable(),
         __metadata("design:paramtypes", [http_1.Http])

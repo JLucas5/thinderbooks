@@ -17,9 +17,22 @@ var usuario_service_1 = require("../usuario/usuario.service");
 var CustomValidator_1 = require("../helper/CustomValidator");
 var CadastroUsuarioComponent = /** @class */ (function () {
     function CadastroUsuarioComponent(service, fb, route, router) {
+        var _this = this;
         this.usuario = new usuario_component_1.UsuarioComponent();
         this.mensagem = '';
         this.service = service;
+        this.route = route;
+        this.router = router;
+        console.log("sadasda");
+        this.route.params.subscribe(function (params) {
+            var id = params['id'];
+            console.log("sadasda");
+            if (id) {
+                _this.service
+                    .buscaPorId(id)
+                    .subscribe(function (user) { return _this.usuario = user; }, function (erro) { return console.log(erro); });
+            }
+        });
         this.meuForm = fb.group({
             nome: ['', forms_1.Validators.required],
             sobrenome: ['', forms_1.Validators.required],

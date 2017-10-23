@@ -7,11 +7,9 @@ var CustomValidation = /** @class */ (function () {
         var password = AC.get('senha').value; // to get value in input tag
         var confirmPassword = AC.get('confirmaSenha').value; // to get value in input tag
         if (password != confirmPassword) {
-            console.log('false');
             AC.get('confirmaSenha').setErrors({ MatchPassword: true });
         }
         else {
-            console.log('true');
             return null;
         }
     };
@@ -20,7 +18,6 @@ var CustomValidation = /** @class */ (function () {
         var pattern = "/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/";
         var regex = new RegExp(pattern);
         if (!regex.test(email)) {
-            console.log('false');
             control.get('email').setErrors({ EmailValidator: true });
         }
         return null;

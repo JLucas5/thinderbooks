@@ -43,6 +43,13 @@ export class UsuarioService {
         .map(res => res.json());
     }
 
+    buscaPorId(id: string): Observable<UsuarioComponent> {
+        console.log(id);
+        return this.http
+            .get(this.url + '/' + id)
+            .map(res => res.json());
+    }
+
 }
 
 export class MensagemCadastro {

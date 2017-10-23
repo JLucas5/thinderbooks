@@ -21,7 +21,26 @@ export class CadastroUsuarioComponent {
 
     constructor(service: UsuarioService, fb: FormBuilder, route: ActivatedRoute, router: Router){
 
-            this.service = service; 
+        this.service = service;        
+        
+        this.route = route;
+        this.router = router;
+console.log("sadasda");
+        this.route.params.subscribe(params => {
+
+            let id = params['id'];
+            console.log("sadasda");
+            if(id) {
+
+                this.service
+                    .buscaPorId(id)
+                    .subscribe(
+                        user => this.usuario = user, 
+                        erro => console.log(erro)
+                    );
+            }
+
+        });
 
             this.meuForm = fb.group({
             nome: ['', Validators.required],
@@ -31,10 +50,10 @@ export class CadastroUsuarioComponent {
             senha: ['', Validators.compose(
                     [Validators.required, Validators.minLength(4)])],
             confirmaSenha: ['', Validators.required]
-        },  {
-            validator: CustomValidation.MatchPassword
-          },
-        );
+            },  {
+                validator: CustomValidation.MatchPassword
+                },
+             );
     }
     
     

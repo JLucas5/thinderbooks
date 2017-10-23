@@ -6,10 +6,8 @@ export class CustomValidation {
        let password = AC.get('senha').value; // to get value in input tag
        let confirmPassword = AC.get('confirmaSenha').value; // to get value in input tag
         if(password != confirmPassword) {
-            console.log('false');
             AC.get('confirmaSenha').setErrors( {MatchPassword: true} )
         } else {
-            console.log('true');
             return null
         }
     }
@@ -20,7 +18,6 @@ export class CustomValidation {
         var regex = new RegExp(pattern);
 
         if (!regex.test(email)) {
-            console.log('false');
             control.get('email').setErrors( {EmailValidator: true} )
         }
         return null
