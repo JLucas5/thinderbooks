@@ -21,8 +21,6 @@ build:
     # npm mirrors can sometimes be flacky, better to use shippable_retry
     # http://docs.shippable.com/ci/advancedOptions/retry/
     - shippable_retry npm install
-    - $MOD_LOC/istanbul --include-all-sources cover -root "$SHIPPABLE_REPO_DIR/routes" $SHIPPABLE_REPO_DIR/node_modules/mocha/bin/_mocha -- -R spec-xunit-file --recursive "$TESTS_LOC_DIR/**/*.spec.js"
-    - $MOD_LOC/istanbul report cobertura --dir $CODE_COVERAGE_DIR
     - popd
 
 
