@@ -21,8 +21,6 @@ build:
     # npm mirrors can sometimes be flacky, better to use shippable_retry
     # http://docs.shippable.com/ci/advancedOptions/retry/
     - shippable_retry npm install
-    - popd
-
 
 # Integrations are used to connect external resources to CI
 # http://docs.shippable.com/integrations/overview/
